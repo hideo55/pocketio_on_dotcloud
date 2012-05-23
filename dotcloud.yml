@@ -1,0 +1,11 @@
+www:
+  type: perl
+  ports: 
+    www: http
+  requirements:
+    - Twiggy
+    - PocketIO
+  postinstall: mv $HOME/current/profile $HOME/profile
+  processes:
+    chat: twiggy -p $PORT_WWW -a chat/app.psgi
+
